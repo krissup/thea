@@ -72,7 +72,6 @@
         .no {
             background-color: #ccc;
             color: #333;
-            position: absolute;
         }
 
         .no:hover {
@@ -83,18 +82,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const noButton = document.querySelector('.no');
-            noButton.addEventListener('mouseenter', () => {
-                const container = document.querySelector('.buttons');
-                const containerWidth = container.offsetWidth;
-                const containerHeight = container.offsetHeight;
-                const buttonWidth = noButton.offsetWidth;
-                const buttonHeight = noButton.offsetHeight;
-
-                const newLeft = Math.random() * (containerWidth - buttonWidth);
-                const newTop = Math.random() * (containerHeight - buttonHeight);
-
-                noButton.style.left = `${newLeft}px`;
-                noButton.style.top = `${newTop}px`;
+            noButton.addEventListener('click', () => {
+                noButton.style.display = 'none';
             });
         });
     </script>
@@ -102,12 +91,13 @@
 <body>
     <div class="container">
         <h1>Vil du være min kæreste?</h1>
-        <img src="https://i.postimg.cc/XvwJ54sC/odderthea2.png" alt="odder" class="otters">
+        <img src="https://i.postimg.cc/XvwJ54sC/odderthea2.png" alt="To forelskede oddere" class="otters">
         <p>Kære Thea, jeg synes, du er helt fantastisk, og jeg vil virkelig gerne, at vi skal være sammen. Så jeg vil bare høre dig, om du, sådan helt officielt, vil være kærester? <3</p>
         <div class="buttons">
-            <button class="yes" onclick="window.location.href='sms:60148483?body=Skriv%dit%svar%her:'">Ja</button>
+            <button class="yes" onclick="window.location.href='sms:60148483?body=Skriv%dit%svar%her:'">Ja ❤️</button>
             <button class="no">Nej</button>
         </div>
     </div>
 </body>
 </html>
+
