@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vil du være min kæreste?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffdae9, #f3c1e6);
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .otters {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .yes {
+            background-color: #ff6f61;
+            color: white;
+        }
+
+        .yes:hover {
+            background-color: #e65b50;
+            transform: scale(1.1);
+        }
+
+        .no {
+            background-color: #ccc;
+            color: #333;
+            position: absolute;
+        }
+
+        .no:hover {
+            background-color: #bbb;
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const noButton = document.querySelector('.no');
+            noButton.addEventListener('mouseenter', () => {
+                const container = document.querySelector('.buttons');
+                const containerWidth = container.offsetWidth;
+                const containerHeight = container.offsetHeight;
+                const buttonWidth = noButton.offsetWidth;
+                const buttonHeight = noButton.offsetHeight;
+
+                const newLeft = Math.random() * (containerWidth - buttonWidth);
+                const newTop = Math.random() * (containerHeight - buttonHeight);
+
+                noButton.style.left = `${newLeft}px`;
+                noButton.style.top = `${newTop}px`;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Vil du være min kæreste?</h1>
+        <img src="https://postimg.cc/VSm5JHxp" alt="odder" class="otters">
+        <p>øde Thea, jeg synes, du er helt fantastisk, og jeg vil virkelig gerne, at vi skal være sammen. Så jeg vil bare høre dig, om du, sådan helt officelt, vil være kærester? <3</p>
+        <div class="buttons">
+            <button class="yes" onclick="window.location.href='sms:+1234567890?body=Jeg%20vil%20gerne%20være%20din%20kæreste!'">Ja</button>
+            <button class="no">Nej</button>
+        </div>
+    </div>
+</body>
+</html>
